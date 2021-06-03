@@ -437,8 +437,9 @@ namespace CSharpDEMO
             if (thread1 != null && thread1.IsAlive)
             {
                 Running = false;
-                thread1.Join();
-                //thread1.Abort();
+                if(!thread1.Join(500))thread1.Abort();
+
+
             }          
         }
 
