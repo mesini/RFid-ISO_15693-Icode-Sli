@@ -26,3 +26,13 @@ C:\Users\z2358\Desktop\修理中ファイル\RFID\XK600-610IC读写器开发包R
 C:\Users\z2358\Desktop\修理中ファイル\RFID\XK600-610IC读写器开发包RS232\Demo program\C#\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Release\CSharpDEMO.pdb
 C:\Users\z2358\Desktop\修理中ファイル\RFID\XK600-610IC读写器开发包RS232\Demo program\C#\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Release\Newtonsoft.Json.dll
 C:\Users\z2358\Desktop\修理中ファイル\RFID\XK600-610IC读写器开发包RS232\Demo program\C#\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Release\Newtonsoft.Json.xml
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Release\CSharpDEMO.exe.config
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Release\CSharpDEMO.exe
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Release\CSharpDEMO.pdb
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Release\CSharpDEMO.exe
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Release\CSharpDEMO.pdb
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Release\Newtonsoft.Json.dll
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Release\Newtonsoft.Json.xml
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Release\CSharpDEMO.Form1.resources
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Release\CSharpDEMO.Properties.Resources.resources
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Release\CSharpDEMO.csproj.GenerateResource.Cache
