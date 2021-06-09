@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using CSharpDEMO;
 using System.Text.RegularExpressions;
 using System.Threading;
-using Newtonsoft.Json;
 using System.IO;
 namespace CSharpDEMO
 {
@@ -200,24 +199,18 @@ namespace CSharpDEMO
                 //btn_sys_API_CloseComm.Enabled = true;
             }
         }      
-        private void btnThread1_Click(object sender, EventArgs e)
-        {
-            Running = true;
-            thread1 = new Thread(polling);
-            thread1.Start();
-        }
         private void polling()
         {
             while (Running)
             {
                 FlushTag();
-                if (txtResult.Text != strResult && Running)
+                if (lblResult.Text != strResult && Running)
                 {
                     lblStatus.set_text(strStatus);
-                    txtResult.set_text(strResult);//&&Running to avoid thread.Join waiting forever
+                    lblResult.set_text(strResult);//&&Running to avoid thread.Join waiting forever
                 }
             }
-
+            
         }
         private void FlushTag()
         {
@@ -362,26 +355,34 @@ namespace CSharpDEMO
 
         private void chkReader_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkReader.Checked == true)
+            try
             {
-                if (!checkComm())
+                if (chkReader.Checked == true)
                 {
-                    chkReader.Checked = false;
-                    return;
-                }                
-                Running = true;
-                thread1 = new Thread(polling);
-                thread1.Start();
-            }
-            else
-            {
-                if (thread1 != null && thread1.IsAlive == true)
-                {
-                    //thread1.Abort();
-                    Running = false;
-                    thread1.Join();
+                    if (!checkComm())
+                    {
+                        chkReader.Checked = false;
+                        return;
+                    }
+                    Running = true;
+                    thread1 = new Thread(polling);
+                    thread1.Start();
                 }
-                txtResult.set_text("");
+                else
+                {
+                    if (thread1 != null && thread1.IsAlive == true)
+                    {
+                        //thread1.Abort();
+                        Running = false;
+                        thread1.Join();
+                    }
+                    lblResult.set_text("");
+                    CurTag = null;
+                }
+            }
+            catch
+            {
+
             }
         }
         private static ManualResetEvent mre = new ManualResetEvent(false);
@@ -398,33 +399,40 @@ namespace CSharpDEMO
         }
         private void btn_Change_Click(object sender, EventArgs e)
         {
-            if (CurTag == null) return;
-            if (thread1 != null && thread1.IsAlive)
+            try
             {
-                Running = false;
-                thread1.Join();
+                if (CurTag == null) return;
+                if (thread1 != null && thread1.IsAlive)
+                {
+                    Running = false;
+                    thread1.Join();
+                }
+                if (!checkComm())
+                    return;
+                byte flags = 0x02;//write without uid
+                byte blk_add = Convert.ToByte(txt_blk_add.Text);//
+                byte num_blk = (byte)(Math.Ceiling(txtDataType.Text.Length / 4.0));//1 block contains 4 bytes, 1 char equal 1 byte(ASCII encoding)
+                byte[] uid = new byte[8];
+                byte[] data = new byte[256];
+                string[] str = ChunksUpto(txtWriteData.Text, 4).ToArray();//split text to array of certain size of 4 elements
+                for (int i = 0; i < str.Length; i++)
+                {
+                    Reader.WriteString2data(data, str[i], i * 4);
+                }
+                int nRet = Reader.API_ISO15693Write(comHandler, DeviceAddress, flags, blk_add, num_blk, uid, data);
+                showStatue(nRet);
+                if (nRet != 0)
+                {
+                    showStatue(data[0]);
+                }
+                Running = true;
+                thread1 = new Thread(polling);
+                thread1.Start();
             }
-            if (!checkComm())
-                return;
-            byte flags = 0x02;//write without uid
-            byte blk_add = Convert.ToByte(txt_blk_add.Text);//
-            byte num_blk =(byte)(Math.Ceiling(txtDataType.Text.Length/4.0));//1 block contains 4 bytes, 1 char equal 1 byte(ASCII encoding)
-            byte[] uid = new byte[8];
-            byte[] data = new byte[256];          
-            string[] str = ChunksUpto(txtWriteData.Text, 4).ToArray();//split text to array of certain size of 4 elements
-            for(int i=0; i < str.Length ; i++)
+            catch
             {
-                Reader.WriteString2data(data, str[i], i*4);
+
             }
-            int nRet = Reader.API_ISO15693Write(comHandler, DeviceAddress, flags, blk_add, num_blk, uid, data);
-            showStatue(nRet);
-            if (nRet != 0)
-            {
-                showStatue(data[0]);
-            }
-            Running = true;
-            thread1 = new Thread(polling);
-            thread1.Start();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -436,8 +444,10 @@ namespace CSharpDEMO
             }
             if (thread1 != null && thread1.IsAlive)
             {
+                
                 Running = false;
-                if(!thread1.Join(500))thread1.Abort();
+                thread1.Interrupt();
+                if (!thread1.Join(500))thread1.Abort();
 
 
             }          
@@ -496,6 +506,14 @@ namespace CSharpDEMO
             }
             if (checkComm()) API_CloseCom();
             API_OpenCom();
+        }
+
+        private void txtDataType_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDataType.Text != "")
+            {
+                a
+            }
         }
     }
     

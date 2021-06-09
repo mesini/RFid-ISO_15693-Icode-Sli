@@ -363,7 +363,7 @@ namespace CSharpDEMO
     public static class String_
     {
         /// <summary>
-        /// if InvokeRequired using delegate to set Control.Text
+        /// if InvokeRequired using BeginInvoke to set Control.Text
         /// </summary>
         /// <param name="control"></param>
         /// <param name="s"></param>
@@ -371,7 +371,7 @@ namespace CSharpDEMO
         {
             if (control.InvokeRequired == true)
             {
-                control.Invoke((MethodInvoker)delegate
+                control.BeginInvoke((MethodInvoker)delegate
                 {
                     control.Text = s;
                 });
@@ -382,7 +382,7 @@ namespace CSharpDEMO
             }
         }
         /// <summary>
-        /// if InvokeRequired using delegate to set Control.Text
+        /// if InvokeRequired using BeginInvoke to set Control.Text
         /// </summary>
         /// <param name="control"></param>
         /// <param name="s"></param>
@@ -390,7 +390,7 @@ namespace CSharpDEMO
         {
             if (control.InvokeRequired == true)
             {
-                control.Invoke((MethodInvoker)delegate
+                control.BeginInvoke((MethodInvoker)delegate
                 {
                     control.Text += s;
                 });

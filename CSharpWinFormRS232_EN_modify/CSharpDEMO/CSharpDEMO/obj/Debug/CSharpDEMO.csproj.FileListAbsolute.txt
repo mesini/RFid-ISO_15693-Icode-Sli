@@ -18,12 +18,11 @@ C:\Users\z2358\Desktop\修理中ファイル\RFID\XK600-610IC读写器开发包R
 C:\Users\z2358\Desktop\修理中ファイル\RFID\XK600-610IC读写器开发包RS232\Demo program\C#\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Debug\Newtonsoft.Json.dll
 C:\Users\z2358\Desktop\修理中ファイル\RFID\XK600-610IC读写器开发包RS232\Demo program\C#\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Debug\Newtonsoft.Json.xml
 C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Debug\CSharpDEMO.exe.config
-C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Debug\CSharpDEMO.exe
-C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Debug\CSharpDEMO.pdb
 C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Debug\CSharpDEMO.exe
 C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Debug\CSharpDEMO.pdb
-C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Debug\Newtonsoft.Json.dll
-C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\bin\Debug\Newtonsoft.Json.xml
 C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Debug\CSharpDEMO.Form1.resources
 C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Debug\CSharpDEMO.Properties.Resources.resources
 C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Debug\CSharpDEMO.csproj.GenerateResource.Cache
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Debug\CSharpDEMO.exe
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Debug\CSharpDEMO.pdb
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Debug\CSharpDEMO.csprojResolveAssemblyReference.cache
