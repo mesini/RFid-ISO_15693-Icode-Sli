@@ -7,6 +7,11 @@ namespace CSharpDEMO
 {
     class Reader
     {
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern int MessageBoxTimeout(IntPtr hWnd, String lpText, String lpCaption, uint uType, Int16 wLanguageId, Int32 dwMilliseconds);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        public static extern IntPtr GetForegroundWindow();
         //-------------------------------------------------------------------------------------------
         [DllImport("function.dll")]
         public static extern int API_OpenComm([In]byte[] com, int Baudrate);
@@ -225,6 +230,22 @@ namespace CSharpDEMO
             Buffer.BlockCopy(data, start, dat, 0, len);
             return asciiEncoding.GetString(dat);
         }
+        /// <summary>
+        /// データの特定の部位をIntとして読み出す
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="len"></param>
+        /// <returns></returns>
+        public static int ReadAsint(byte[] data, int start, int len = 4)
+        {
+            if (data == null) return 0;
+            if (len > 4) return 0;
+            byte[] dat = new byte[len];
+
+            Buffer.BlockCopy(data, start, dat, 0, len);
+            int val = dat[3] * 0x1000000 + dat[2] * 0x10000 + dat[1] * 0x100 + dat[0];
+            return val;
+        }
     }
     public class IcodeSliTAG
     {
@@ -296,38 +317,65 @@ namespace CSharpDEMO
 
         }
 
-        /// <summary>
-        /// データの特定の部位を文字列として読み出す
-        /// </summary>
-        /// <param name="start"></param>
-        /// <param name="len"></param>
-        /// <returns></returns>
-        /// 
-        public string ReadAsString(int start, int len)
-        {
-            if (data == null) return "";
-            System.Text.ASCIIEncoding asciiEncoding = new System.Text.ASCIIEncoding();
-            byte[] dat = new byte[len];
-            Buffer.BlockCopy(data, start, dat, 0, len);
-            return asciiEncoding.GetString(dat);
-        }
-        /// <summary>
-        /// データの特定の部位をIntとして読み出す
-        /// </summary>
-        /// <param name="start"></param>
-        /// <param name="len"></param>
-        /// <returns></returns>
-        public int ReadAsint(int start, int len = 4)
-        {
-            if (data == null) return 0;
-            if (len > 4) return 0;
-            byte[] dat = new byte[len];
+        ///// <summary>
+        ///// データの特定の部位を文字列として読み出す
+        ///// </summary>
+        ///// <param name="start"></param>
+        ///// <param name="len"></param>
+        ///// <returns></returns>
+        ///// 
+        //public string ReadAsString(int start, int len)
+        //{
+        //    if (data == null) return "";
+        //    System.Text.ASCIIEncoding asciiEncoding = new System.Text.ASCIIEncoding();
+        //    byte[] dat = new byte[len];
+        //    Buffer.BlockCopy(data, start, dat, 0, len);
+        //    return asciiEncoding.GetString(dat);
+        //}
+        ///// <summary>
+        ///// データの特定の部位をIntとして読み出す
+        ///// </summary>
+        ///// <param name="start"></param>
+        ///// <param name="len"></param>
+        ///// <returns></returns>
+        //public int ReadAsint(int start, int len = 4)
+        //{
+        //    if (data == null) return 0;
+        //    if (len > 4) return 0;
+        //    byte[] dat = new byte[len];
+        //
+        //    Buffer.BlockCopy(data, start, dat, 0, len);
+        //    int val = dat[3] * 0x1000000 + dat[2] * 0x10000 + dat[1] * 0x100 + dat[0];
+        //    return val;
+        //}
 
-            Buffer.BlockCopy(data, start, dat, 0, len);
-            int val = dat[3] * 0x1000000 + dat[2] * 0x10000 + dat[1] * 0x100 + dat[0];
-            return val;
-        }
-
+        //public string[] convReadable(byte[] bytearray, string Atribute)
+        //{
+        //    string[] strs = new string[Atribute.Length];
+        //    if (bytearray == null) return null;
+        //    System.Text.ASCIIEncoding asciiEncoding = new System.Text.ASCIIEncoding();
+        //    for (int x = 0; x < Atribute.Length; x++)
+        //    {
+        //        byte[] data = new byte[4];
+        //        Buffer.BlockCopy(bytearray, x * 4, data, 0, 4);
+        //        switch (Atribute[x])
+        //        {
+        //            case 't':
+        //                strs[x] = asciiEncoding.GetString(data);
+        //                break;
+        //            case 'i':
+        //                int val = data[3] * 0x1000000 + data[2] * 0x10000 + data[1] * 0x100 + data[0];
+        //                strs[x] = val.ToString();
+        //                break;
+        //            case 'h':
+        //                strs[x] = byteHEX(data[3]) + byteHEX(data[2]) + byteHEX(data[1]) + byteHEX(data[0]);
+        //                break;
+        //            default:
+        //                return strs;
+        //        }
+        //    }
+        //    return strs;
+        //}
         public override string ToString()
         {
             return ToHexString(UID);

@@ -13,11 +13,18 @@
         /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            try
             {
-                components.Dispose();
+                if (disposing && (components != null))
+                {
+                    components.Dispose();
+                }
+                base.Dispose(disposing);
             }
-            base.Dispose(disposing);
+            catch
+            {
+
+            }
         }
 
         #region Windows 窗体设计器生成的代码
@@ -40,6 +47,7 @@
             this.label93 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblResult = new System.Windows.Forms.Label();
+            this.btnConnect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Baudrate
@@ -126,8 +134,6 @@
             // chkReader
             // 
             this.chkReader.AutoSize = true;
-            this.chkReader.Checked = true;
-            this.chkReader.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkReader.Location = new System.Drawing.Point(401, 187);
             this.chkReader.Margin = new System.Windows.Forms.Padding(4);
             this.chkReader.Name = "chkReader";
@@ -175,11 +181,22 @@
             this.lblResult.TabIndex = 62;
             this.lblResult.Text = "タッグ情報：";
             // 
+            // btnConnect
+            // 
+            this.btnConnect.Location = new System.Drawing.Point(404, 13);
+            this.btnConnect.Name = "btnConnect";
+            this.btnConnect.Size = new System.Drawing.Size(89, 23);
+            this.btnConnect.TabIndex = 63;
+            this.btnConnect.Text = "Reconnect";
+            this.btnConnect.UseVisualStyleBackColor = true;
+            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 320);
+            this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.label93);
@@ -215,6 +232,7 @@
         private System.Windows.Forms.Label label93;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Button btnConnect;
     }
 }
 

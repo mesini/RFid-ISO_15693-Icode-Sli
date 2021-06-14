@@ -1,1 +1,1 @@
-COM1,9600
+COM1,9600,tttttttttttttttt,3

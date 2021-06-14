@@ -34,3 +34,4 @@ C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Ic
 C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Release\CSharpDEMO.csproj.GenerateResource.Cache
 C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Release\CSharpDEMO.exe
 C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Release\CSharpDEMO.pdb
+C:\Users\z2358\Desktop\修理中ファイル\RFID\RFid Sli New\RFid-ISO_15693-Icode-Sli\CSharpWinFormRS232_EN_modify\CSharpDEMO\CSharpDEMO\obj\Release\CSharpDEMO.ResetForm.resources
